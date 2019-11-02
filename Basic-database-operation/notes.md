@@ -26,3 +26,42 @@
 - 在后面加上 default charset =utf8;可以使得支持中文
 ####   查看数据表
 - show tables [like 匹配模式]；
+  - like 后面可以加关键词
+- show table status 数据表名    查看数据表相关数据
+  - 字段非常多的时候，可以使用/G作为结束符。为纵向显示
+#### 修改数据表
+- 修改表名
+  - alter table 旧表名 rename [to]新表名
+  - 可以直接使用rename 后面加to
+- 修改表选项
+  - alter table 表名 表选项 = 值； 改变表选项的类型
+  ## 表选项操作
+  #### 查看表结构
+  - 查看数据表的字段信息
+    - desc 数据表名
+  - 查看数据表的创建语句
+    - show create table 表名；
+  - 查看数据表结构
+    - show [full] columns from 数据表名；
+#### 修改表结构
+- 修改字段名 alter table 数据名 change [columns] 旧字段名 新字段名 字段类型 [字段属性];
+- 修改字段类型 alter table 数据表名 modify [columns] 字段名 新类型 [字段属性];
+- 修改字段的位置
+  - 数据表在创建时，字段编写的先后顺序就是其在数据库中存储的顺序。
+
+
+          alter table 数据表名字
+          modify [columns] 字段名1 数据类型[数据属性] [first| after 字段名2];
+- 新增字段 
+    
+    
+          alter table 数据表名字
+          add [columns]  新字段名 字段类型[first|after 字段名];
+- 删除字段
+  - alter table 数据表 drop [column] 字段名；
+- 删除数据表 
+  - drop [temporary] table [IF EXISTS] 数据表1 [,数据表2...]
+## 数据操作
+#### 添加数据
+- insert [into] 数据表名 {values|values}(值1[,值2...]))
+- 为部分字段添加数据
