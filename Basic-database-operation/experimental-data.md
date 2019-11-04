@@ -160,3 +160,57 @@
                 |    5 | joy123@163.com   |     1 | JSMWNL       |
                 +------+------------------+-------+--------------+
                 5 rows in set (0.00 sec)
+#### 查询表中部分字段
+                mysql> select id,email from subscribe;
+                +------+------------------+
+                | id   | email            |
+                +------+------------------+
+                |    1 | tom123@163.com   |
+                |    2 | lucy123@163.com  |
+                |    3 | lily123@163.com  |
+                |    4 | jimmy123@163.com |
+                |    5 | joy123@163.com   |
+                +------+------------------+
+                5 rows in set (0.00 sec)
+#### 简单条件查询数据
+
+
+
+                mysql> select * from subscribe where state = 1;
+                +------+-----------------+-------+--------------+
+                | id   | email           | state | verification |
+                +------+-----------------+-------+--------------+
+                |    1 | tom123@163.com  |     1 | TRBXPO       |
+                |    2 | lucy123@163.com |     1 | LOICPE       |
+                |    5 | joy123@163.com  |     1 | JSMWNL       |
+                +------+-----------------+-------+--------------+
+                3 rows in set (0.00 sec)
+#### 修改数据
+                mysql> update subscribe set state = 1 where id =4;
+                Query OK, 1 row affected (0.00 sec)
+                Rows matched: 1  Changed: 1  Warnings: 0
+                mysql> select * from subscribe where state = 1;
+                +------+------------------+-------+--------------+
+                | id   | email            | state | verification |
+                +------+------------------+-------+--------------+
+                |    1 | tom123@163.com   |     1 | TRBXPO       |
+                |    2 | lucy123@163.com  |     1 | LOICPE       |
+                |    4 | jimmy123@163.com |     1 | QKOLPH       |
+                |    5 | joy123@163.com   |     1 | JSMWNL       |
+                +------+------------------+-------+--------------+
+                4 rows in set (0.00 sec)
+#### 删除数据
+
+
+                mysql> delete from subscribe where id =5;
+                Query OK, 1 row affected (0.00 sec)
+                mysql> select * from subscribe;
+                +------+------------------+-------+--------------+
+                | id   | email            | state | verification |
+                +------+------------------+-------+--------------+
+                |    1 | tom123@163.com   |     1 | TRBXPO       |
+                |    2 | lucy123@163.com  |     1 | LOICPE       |
+                |    3 | lily123@163.com  |     0 | JIXDAMI      |
+                |    4 | jimmy123@163.com |     1 | QKOLPH       |
+                +------+------------------+-------+--------------+
+                4 rows in set (0.00 sec)
