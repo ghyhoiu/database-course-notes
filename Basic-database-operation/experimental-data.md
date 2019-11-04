@@ -214,3 +214,67 @@
                 |    4 | jimmy123@163.com |     1 | QKOLPH       |
                 +------+------------------+-------+--------------+
                 4 rows in set (0.00 sec)
+#### 修改数据表名
+
+
+                mysql> alter table subscribe rename subscribe1;
+                Query OK, 0 rows affected (0.01 sec)
+
+                mysql> show tables;
+                +---------------------+
+                | Tables_in_operation |
+                +---------------------+
+                | subscribe1          |
+                +---------------------+
+                1 row in set (0.00 sec)
+#### 修改数据表类型
+
+
+                mysql> alter table subscribe charset=utf8;
+                Query OK, 0 rows affected (0.00 sec)
+                Records: 0  Duplicates: 0  Warnings: 0
+#### 修改字段名
+
+
+                mysql> alter table subscribe change id number int;
+                Query OK, 0 rows affected (0.01 sec)
+                Records: 0  Duplicates: 0  Warnings: 0
+#### 修改字段类型
+
+
+                mysql> alter table subscribe modify id char(3);
+                Query OK, 4 rows affected (0.01 sec)
+                Records: 4  Duplicates: 0  Warnings: 0
+#### 添加新字段
+
+
+                mysql> alter table subscribe add things char(32);
+                Query OK, 0 rows affected (0.05 sec)
+                Records: 0  Duplicates: 0  Warnings: 0
+
+                mysql> select * from subscribe;
+                +------+------------------+-------+--------------+--------+
+                | id   | email            | state | verification | things |
+                +------+------------------+-------+--------------+--------+
+                | 1    | tom123@163.com   |     1 | TRBXPO       | NULL   |
+                | 2    | lucy123@163.com  |     1 | LOICPE       | NULL   |
+                | 3    | lily123@163.com  |     0 | JIXDAMI      | NULL   |
+                | 4    | jimmy123@163.com |     1 | QKOLPH       | NULL   |
+                +------+------------------+-------+--------------+--------+
+                4 rows in set (0.00 sec)
+#### 删除字段
+
+
+                mysql> alter table subscribe drop things;
+                Query OK, 0 rows affected (0.04 sec)
+                Records: 0  Duplicates: 0  Warnings: 0
+#### 删除数据表
+
+
+                mysql> create table sacrifice ( 
+                -> di int comment '编号'
+                -> );
+                Query OK, 0 rows affected (0.01 sec)
+
+                mysql> drop table sacrifice;
+                Query OK, 0 rows affected (0.00 sec)

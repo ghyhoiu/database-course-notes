@@ -44,7 +44,7 @@
   - 查看数据表结构
     - show [full] columns from 数据表名；
 #### 修改表结构
-- 修改字段名 alter table 数据名 change [columns] 旧字段名 新字段名 字段类型 [字段属性];
+- 修改字段名 alter table 数据表名 change [columns] 旧字段名 新字段名 字段类型 [字段属性];
 - 修改字段类型 alter table 数据表名 modify [columns] 字段名 新类型 [字段属性];
 - 修改字段的位置
   - 数据表在创建时，字段编写的先后顺序就是其在数据库中存储的顺序。
