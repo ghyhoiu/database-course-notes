@@ -5,7 +5,7 @@
 - 复制数据表数据
   - insert [into] 数据表名1 [字段列表]   select [字段列表] from 数据表名2;
 - 临时表的使用
-  - 创建临时表 create temporary table 表名(字段名 字段类型[字段属性],next ...)[表选项]
+  - 创建临时表 create temporary table 表名(字段名 字段类型[字段属性],next ...)[表选项];
 #### 主键冲突
 #### 清空数据
 - truncate [table] 表名;
