@@ -1,5 +1,3 @@
-## 单表操作
-#### 复制数据表
 - 复制数据表结构
   - create [temporary] table [if exists] 表名(like 旧表名);
 - 复制数据表数据
@@ -20,3 +18,9 @@
   - select 选项为 distinct
 #### 排序
 - select * from 数据表名 order by id {desc|asc};
+    - asc表示升序，desc表示降序。
+    - 多字段排序 
+
+        select *|{字段列表} from 数据表名
+        order by 字段名 1 [asc|desc] [字段名2[asc | desc]]...;
+
