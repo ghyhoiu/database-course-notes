@@ -18,3 +18,16 @@ INSERT into pterosaur.pterosaur_category(id,parent_id,name)VALUES
 (25,1,'翼手龙科'),(26,25,'格格翼龙属'),(27,25,'东方翼龙属'),
 (28,1,'悟空翼龙科'),(29,28,'长城翼龙属'),(30,28,'鲲鹏翼龙属'),(31,28,'悟空翼龙属');
 select * from pterosaur_category;
+
+use pterosaur;
+CREATE TABLE pterosaur_information (
+id int unsigned PRIMARY KEY AUTO_INCREMENT comment'id',
+parent_id int unsigned not NULL DEFAULT 0 comment '分类id',
+sn varchar(20) not NULL DEFAULT '' comment '编号',
+name varchar(120) not NULL DEFAULT '' comment '名称',
+height varchar(120) not NULL DEFAULT '' comment '身长',
+area varchar(120) not NULL default '' comment '被发现地区',
+food varchar(100) not NULL default '' comment '食物',
+era varchar(120) not NULL default '' comment '时代'
+) engine=innoDB DEFAULT charset=utf8;
+DESC pterosaur.pterosaur_information;
