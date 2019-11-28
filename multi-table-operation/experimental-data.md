@@ -2,9 +2,11 @@
 ### 联合查询                                          
 
 
-    SELECT name, id from pterosaur.pterosaur_category where parent_id=11
+    SELECT name, id from pterosaur.pterosaur_category 
+    where parent_id=11
     UNION 
-    SELECT name, id FROM pterosaur.pterosaur_information WHERE parent_id=18;
+    SELECT name, id FROM pterosaur.pterosaur_information
+    WHERE parent_id=18;
     
 |name    |id|
 | --------|--|
@@ -19,7 +21,10 @@
 ### 连接查询                                       
 #### 交叉连接                                         
 
-    select c.id cid,c.name cname,g.id gid ,g.name gname FROM pterosaur.pterosaur_category as c CROSS JOIN pterosaur.pterosaur_information as g;
+    select c.id cid,c.name cname,g.id gid ,g.name gname 
+    FROM pterosaur.pterosaur_category as c 
+    CROSS JOIN pterosaur.pterosaur_information as g;
+由于出现了近700行，省略
 cid|cname |gid|gname  |
 ---|------|---|-------|
   1|喙嘴龙亚目 | 21|悟空翼龙   |
@@ -33,8 +38,11 @@ cid|cname |gid|gname  |
 
 #### 内连接                                           
     
-    select c.id cid,c.name cname,g.id gid ,g.name gname FROM pterosaur.pterosaur_category as g JOIN pterosaur.pterosaur_information as c on g.parent_id = c.parent_id;
-    由出现了将近70行，所以仅部分显示
+    select c.id cid,c.name cname,g.id gid ,g.name gname 
+    FROM pterosaur.pterosaur_category as g 
+    JOIN pterosaur.pterosaur_information as c
+    on g.parent_id = c.parent_id;
+由出现了将近70行，所以仅部分显示
 cid|cname  |gid|gname   |
 ---|-------|---|--------|
 2|蓓天翼龙   |  3|双型齿翼龙属  |
@@ -49,7 +57,9 @@ cid|cname  |gid|gname   |
 5|奥地利翼龙  |  9|奥地利翼龙   |
 6|卡尼亚翼龙  | 10|卡尼亚翼龙属  |
 #### 左外连接   
-     select c.id cid,c.name cname,g.id gid ,g.name gname FROM pterosaur.pterosaur_category as g left JOIN pterosaur.pterosaur_information as c on g.parent_id = c.parent_id;    
+     select c.id cid,c.name cname,g.id gid ,g.name gname 
+     FROM pterosaur.pterosaur_category as g left 
+     JOIN pterosaur.pterosaur_information as c on g.parent_id = c.parent_id;    
  cid|cname  |gid|gname   |
 ---|-------|---|--------|
 1|双型齿翼龙  |  3|双型齿翼龙属 |
@@ -63,7 +73,10 @@ cid|cname  |gid|gname   |
 
 #### 右外连接    
 
-        select c.id cid,c.name cname,g.id gid ,g.name gname FROM pterosaur.pterosaur_category as g left JOIN pterosaur.pterosaur_information as c on g.parent_id = c.parent_id;
+        select c.id cid,c.name cname,g.id gid ,g.name gname 
+        FROM pterosaur.pterosaur_category as g left 
+        JOIN pterosaur.pterosaur_information as c 
+        on g.parent_id = c.parent_id;
 
 
 cid|cname  |gid|gname   |
