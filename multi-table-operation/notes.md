@@ -3,9 +3,9 @@
 - 前提保证多个select语句的查询字段数相同，合并多个查询结果
 - 格式
 
-    select
-    union [all|distinct] select ...
-    [union[all|distinct]selsect ...]
+        select
+        union [all|distinct] select ...
+        [union[all|distinct]selsect ...]
 - 注意，如果查询字段的表达意思和数据类型不同，Mysql也会根据查询字段出现的顺序，对结果进行合并
 - order by 可以对查询字段进行排序
 ### 连接查询
@@ -13,19 +13,22 @@
 - 返回两个表中所用数据行的笛卡尔积。
 - 格式
 
-    select 查询字段 from 表1 cross join 表2 
+
+        select 查询字段 from 表1 cross join 表2
+        
 #### 内连接
 - 返回第一个表和第二个表所有匹配成功的记录
 - 格式
 
-    select 查询字段 from 表 1
-    join 表 2 on 匹配条件
+        select 查询字段 from 表 1
+        join 表 2 on 匹配条件
 #### 左外连接
 - 用于返回连接关键字左表中的所有记录
 - 格式
 
-    select 查询字段
-    from 表 1 left [outer] join 表 2 on 匹配条件
+   
+        select 查询字段
+        from 表 1 left [outer] join 表 2 on 匹配条件
 #### 右外连接
 ## 子查询
 ### 标量子查询
