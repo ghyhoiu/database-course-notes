@@ -24,7 +24,8 @@
     select c.id cid,c.name cname,g.id gid ,g.name gname 
     FROM pterosaur.pterosaur_category as c 
     CROSS JOIN pterosaur.pterosaur_information as g;
-由于出现了近700行，省略
+由于出现了近600行，省略
+
 cid|cname |gid|gname  |
 ---|------|---|-------|
   1|喙嘴龙亚目 | 21|悟空翼龙   |
@@ -43,6 +44,7 @@ cid|cname |gid|gname  |
     JOIN pterosaur.pterosaur_information as c
     on g.parent_id = c.parent_id;
 由出现了将近70行，所以仅部分显示
+
 cid|cname  |gid|gname   |
 ---|-------|---|--------|
 2|蓓天翼龙   |  3|双型齿翼龙属  |
