@@ -54,3 +54,39 @@ INSERT INTO pterosaur.pterosaur_information(id, parent_id, sn, name, height, are
 (19,28,'q020401','长城翼龙','0.475','中国河北青龙','昆虫','中侏罗世'),
 (20,28,'q020402','鲲鹏翼龙','1.2','中国东北部','鱼类','侏罗纪中晚期'),
 (21,28,'q020403','悟空翼龙','0.7','中国辽宁','鱼类','侏罗纪中期');
+CREATE TABLE pterosaur_people (
+id int UNSIGNED PRIMARY KEY auto_increment comment 'id',
+pterosaur_id int UNSIGNED NOT NULL DEFAULT 0 comment '翼龙id',
+pterosaur_name varchar(100) not null default '' comment '翼龙名字',
+people_name  VARCHAR(100) NOT NULL DEFAULT '' comment '名字',
+area VARCHAR(100) NOT null default '' comment  '出生地区(籍贯)',
+age VARCHAR(100) not null default '' comment '出生时期'
+) engine=innoDB DEFAULT charset=utf8;
+alter table pterosaur.pterosaur_people drop pterosaur_id;
+alter  table pterosaur_people add sn int UNSIGNED not null default 0 comment '翼龙id' after id;
+desc pterosaur_people;
+alter table pterosaur_people modify sn varchar(20);
+desc pterosaur_people;
+INSERT into pterosaur.pterosaur_people(id,sn,pterosaur_name,people_name,area,age)VALUES
+(1,'q010101','双齿型翼龙','玛丽·安宁','早期英国','1798-1847'),
+(2,'q010102','培天翼龙','Rupert Wild','德国','1980-1991'),
+( 3,'q010201','热河翼龙','民众','中国','NULL'),
+( 4,'q010202','蛙颌翼龙','Anatoly Nicolaevich Ryabinin','苏联','NULL'),
+(5,'q010301','奥地利翼龙','民众','奥地利','NULL'),
+(6,'q010302','卡尼亚翼龙','Fabio Marco Dalia Vecchia','意大利','NULL'),
+(7,'q010401','索德斯翼龙','NULL','NULL','NULL'),
+(8,'q010402','双孔翼龙','Reverend D.W. Purdon','英国','NULL'),
+(9,'q010403','布尔诺美丽翼龙','Monika Rothgaenger','德国','NULL'),
+(10,'q010404','凤凰翼龙','吕君昌','中国','1965-2018'),
+(11,'q010405','青龙翼龙','吕君昌','中国','1965-2018'),
+(12,'q020101','华夏翼龙','吕君昌','中国','1965-2018'),
+(13,'q020102','雷神翼龙','大卫·安文','英国','NULL'),
+(14,'q020103','掠海翼龙','Alexander Keliner','巴西','NULL'),
+(15,'q020201','风神翼龙','道格拉斯·劳森','美国','NULL'),
+(16,'q020202','伏尔加翼龙','尼古拉·波戈柳波夫','苏联','1872-1928'),
+(17,'q020301','格格翼龙','周忠和','美国','1965-NULL'),
+(18,'q020302','东方翼龙','吕君昌','中国','1965-2018'),
+(19,'q020401','长城翼龙','吕君昌','中国','1965-2018'),
+(20,'q020402','鲲鹏翼龙','吕君昌','中国','1965-2018'),
+(21,'q020403','悟空翼龙','亚历山大·克尔纳','美国','1977-NULL')
+select * from pterosaur_people;
