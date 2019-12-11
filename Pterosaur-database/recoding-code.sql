@@ -90,3 +90,16 @@ INSERT into pterosaur.pterosaur_people(id,sn,pterosaur_name,people_name,area,age
 (20,'q020402','鲲鹏翼龙','吕君昌','中国','1965-2018'),
 (21,'q020403','悟空翼龙','亚历山大·克尔纳','美国','1977-NULL')
 select * from pterosaur_people;
+
+delete from pterosaur.pterosaur_information [id=2]
+Query ok , 1 row affected( 0.00sec)
+
+delete from pterosaur.pterosaur_category [id=2]
+Query ok , 1 row affected( 0.00sec)
+
+delete from pterosaur.pterosaur_people [name="NULL"]
+Query ok , 1 row affected( 0.00sec)
+
+update pterosaur_category set height =0.3 where id =2
+Query ok , 1 row affected( 0.00sec)
+
