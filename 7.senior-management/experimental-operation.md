@@ -1,4 +1,4 @@
-# 高级管理
+高级管理
 
 ## 用户权限管理
 
@@ -70,11 +70,43 @@ SELECT * FROM shop.sh_goods;
 
 ##### 备份单个数据库
 
+```bash
+c:mysql\bin>mysqldump -u root -h localhost -p yilong>d:\docment.sql
+Enter password: ****
+```
+
 ##### 备份多个数据库
+
+  
+
+```bash
+c:mysql\bin>mysqldump -u root -h localhost -p  --databsae yilong asdf>d:\docment.sql
+Enter password: ****
+```
+
+
 
 #### 还原
 
+```bash
+c:mysql\bin>mysqldump -u root -h localhost -p --all-database >d:\docment.sql
+Enter password: ****
+```
+
+
+
 ##### 输入重定向
 
+```bash
+c:mysql\bin>mysqldump -u root -p asdf >d:\docment.sql
+Enter password: ****
+```
+
 ##### source命令
+
+```sql
+drop table muke;
+Query OK. 0 rows affected (0.02 sec)
+source d:\docment.sql
+```
 
